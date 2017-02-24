@@ -32,6 +32,18 @@ qt0 = quantile(vect0, probs = c(0.95, 0.99))
 #   формулам для Salary, где вместо 2007 следует последовательно подставить
 #   каждый год работы сотрудника в организации.
 
+names = c("kolia", "sasha", "kate", "mad", "julia")
+Nrows = 1:20
+
+for(i in 1:20) {
+    print("ddd")
+}
+
+#gl(n=2, k=2, length=10, labels = c("Male", "Female")) # Генерируем уровни factor-а
+#[1] Male   Male   Female Female Male   Male   Female Female Male   Male  
+#Levels: Male Female
+
+#new column  f["new_col_name"] = 1:4
 
 
 #3. Напишите функцию, которая принимает на вход числовой вектор x и
