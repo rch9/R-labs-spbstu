@@ -44,6 +44,7 @@ for(i in 1:20) {
 #Levels: Male Female
 
 #new column  f["new_col_name"] = 1:4
+# or my.dataframe$new.col <- a.vector
 
 
 #3. Напишите функцию, которая принимает на вход числовой вектор x и
