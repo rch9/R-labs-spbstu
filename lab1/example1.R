@@ -1,6 +1,6 @@
 library(e1071)
 
-
+#Example
 #stringAsFactors TRUE тк все данные котегориальные. ПОЧЕМУ?
 A_row <- read.table(file = "Tic_tac_toe.txt", sep = ",", stringsAsFactors = TRUE)
 
