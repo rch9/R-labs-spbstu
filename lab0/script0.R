@@ -13,6 +13,22 @@ mn0 = mean(vect0)
 sd0 = sd(vect0)
 qt0 = quantile(vect0, probs = c(0.95, 0.99))
 
+print(length(vect0))
+
+vect0[2]
+
+vect0Len = length(vect0)
+mn1 = 0
+for(i in 1:vect0Len) {
+  mn1 = mn1 + vect0[i]
+}
+mn1 = mn1 / vect0Len
+
+sd1 = 0
+for(i in 1:vect0Len) {
+  sd1 = sd1 + (vect0[i] - mn1)^2
+}
+sd1 = sqrt(sd1 / vect0Len)
 
 #квантиль при помощи сортировки
 
@@ -59,6 +75,11 @@ for(i in 1:20) {
 #   где x – вектор длины 5000, выборка реализаций экспоненциально распределенной 
 #   случайной величины с параметром λ = 500. Приближение какого график
 
+function(x, k = length(x) / 10) 
+{
+  minX = min(x)
+  maxX = max(x)
+}
 
 #4. Пусть дан набор точек в xi ∈ R^d, i = 1, 2, . . . , n., каждой из которых
 #   поставлено в соотвествие некоторое вещественное число y. Реализуйте метод 
