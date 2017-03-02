@@ -55,17 +55,19 @@ Employees <- data.frame(Nrow = integer(), Name = character(), BirthYear = intege
 for(i in 1:20) {
   BirthYear0 = floor(runif(n = 1, min = 1960, max = 1985 + 1))
   EmployYear0 = floor(runif(n = 1, min = BirthYear0 + 18, max = 2006 + 1))
-  
   Salary0 = 0
+  
   if(BirthYear0 > 1975) {
     Salary0 = (log(2007 - EmployYear0) + 1) * 8000
   } 
   else {
     Salary0 = (log2(2007 - EmployYear0) + 1) * 8000
   }
+  
   Salary0 = round(Salary0, digits = 3)
   
-  Employees <- rbind(Employees, data.frame(Nrow = i, Name = paste("name", i), BirthYear = BirthYear0, EmployYear = EmployYear0, Salary = Salary0)) 
+  Employees <- rbind(Employees, data.frame(Nrow = i, Name = paste("name", i), BirthYear = BirthYear0, 
+                                           EmployYear = EmployYear0, Salary = Salary0)) 
 }
 
 salaryMore15KCounter = 0
@@ -73,6 +75,28 @@ for(i in 1:nrow(Employees)) {
   if (Employees$Salary[i] > 15000) {
     salaryMore15KCounter = salaryMore15KCounter + 1
   }
+}
+
+Employees$"13%" <- 0
+for(i in 1:nrow(Employees)) {
+  SalaryFull = 0
+  
+  EmployYear0 = Employees$EmployYear[i]
+  for(j in (EmployYear0 + 1):2007) {
+    #print(j)
+    Salary0 = 0
+    
+    if(BirthYear0 > 1975) {
+      Salary0 = (log(j - EmployYear0) + 1) * 8000
+    } 
+    else {
+      Salary0 = (log2(j - EmployYear0) + 1) * 8000
+    }
+    
+    SalaryFull = SalaryFull + Salary0
+  }
+  
+  Employees$`13%`[i] = SalaryFull * 0.87
 }
 
 
