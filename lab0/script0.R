@@ -48,12 +48,33 @@ sd1 = sqrt(sd1 / vect0Len)
 #   формулам для Salary, где вместо 2007 следует последовательно подставить
 #   каждый год работы сотрудника в организации.
 
-names = c("kolia", "sasha", "kate", "mad", "julia")
-Nrows = 1:20
+Employees <- data.frame(Nrow = integer(), Name = character(), BirthYear = integer(), EmployYear = integer(), Salary = double(), 
+                 stringsAsFactors = FALSE)
+
 
 for(i in 1:20) {
-    print("ddd")
+  BirthYear0 = floor(runif(n = 1, min = 1960, max = 1985 + 1))
+  EmployYear0 = floor(runif(n = 1, min = BirthYear0 + 18, max = 2006 + 1))
+  
+  Salary0 = 0
+  if(BirthYear0 > 1975) {
+    Salary0 = (log(2007 - EmployYear0) + 1) * 8000
+  } 
+  else {
+    Salary0 = (log2(2007 - EmployYear0) + 1) * 8000
+  }
+  Salary0 = round(Salary0, digits = 3)
+  
+  Employees <- rbind(Employees, data.frame(Nrow = i, Name = paste("name", i), BirthYear = BirthYear0, EmployYear = EmployYear0, Salary = Salary0)) 
 }
+
+salaryMore15KCounter = 0
+for(i in 1:nrow(Employees)) {
+  if (Employees$Salary[i] > 15000) {
+    salaryMore15KCounter = salaryMore15KCounter + 1
+  }
+}
+
 
 #gl(n=2, k=2, length=10, labels = c("Male", "Female")) # Генерируем уровни factor-а
 #[1] Male   Male   Female Female Male   Male   Female Female Male   Male  
