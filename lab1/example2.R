@@ -14,8 +14,11 @@ spamtest <- spamtrain[idx,]
 
 model <- naiveBayes(type ~ ., data = spamtrain)
 
-predict(model, spamtest)
+predicted = predict(model, spamtest)
 
-table(predict(model, spamtest), spamtest$type)
+table(predicted, spamtest$type)
+table(predicted)
+table(spamtest$type)
 
-predict(model, spamtest, type = "raw")
+
+#predict(model, spamtest, type = "raw")
