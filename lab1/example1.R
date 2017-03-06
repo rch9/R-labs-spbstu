@@ -20,7 +20,7 @@ prop.table(table(A_test$V10))
 
 
 #все, кроме 10. 
-A_classifier <- naiveBayes(A_train[,-10], A_train$V10)
+A_classifier <- naiveBayes( A_train[,-10], A_train$V10)
 #тут нужны пояснения 
 #A_classifier <- naiveBayes(V10 ~ ., data = A_train)
 
@@ -29,5 +29,5 @@ A_predicted <- predict(A_classifier, A_test)
 table(A_predicted, A_test$V10)
 
 
-#table(A_predicted)
-#table(A_test$V10)
+table(A_predicted)
+table(A_test$V10)
