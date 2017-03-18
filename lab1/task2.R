@@ -34,3 +34,4 @@ table(predictedd)
 table(f_test$TYPE)
 
 table(predictedd, f_test$TYPE)
+
