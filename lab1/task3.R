@@ -7,6 +7,7 @@ gender_submission <- read.csv(file = "gender_submission.csv", header = TRUE, sep
 
 # need convert to factor
 titanic_train$Survived = factor(titanic_train$Survived)
+gender_submission$Survived = factor(gender_submission$Survived)
 
 # bayes
 classifier <- naiveBayes(titanic_train[,-2], titanic_train$Survived)
@@ -15,7 +16,5 @@ classifier <- naiveBayes(titanic_train[,-2], titanic_train$Survived)
 predicted <- predict(classifier, titanic_test) 
 
 # results
+table(predicted, gender_submission$Survived)
 
-table(predicted)
-
-# table(predictedd, f_test$TYPE)
