@@ -1,5 +1,6 @@
 # install.packages("mlbench")
-# library(mlbench)
+# install.packages("kknn")
+library(mlbench)
 library(kknn)
 ## загружаем данные Ionospere 
 data(ionosphere)
