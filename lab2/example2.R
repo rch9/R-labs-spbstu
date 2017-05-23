@@ -17,7 +17,9 @@ ionosphere.valid <- ionosphere[-c(1:200),]
 fit.kknn <- kknn(class ~ ., ionosphere.learn, ionosphere.valid)
 ## запускаем процедуру train.kknn, используя
 ## расстояние Минковского с параметром 1 и с различными ядрами, максимальное K для поиска оптимального K равно 15
-fit.train1 <- train.kknn(class ~ ., ionosphere.learn, kmax = 15,kernel = c("triangular", "rectangular", "epanechnikov", "optimal"), distance = 1)
-fit.train2 <- train.kknn(class ~ ., ionosphere.learn, kmax = 15, kernel = c("triangular", "rectangular", "epanechnikov", "optimal"), distance = 2)
+fit.train1 <- train.kknn(class ~ ., ionosphere.learn, kmax = 15, 
+                         kernel = c("triangular", "rectangular", "epanechnikov", "optimal"), distance = 1)
+fit.train2 <- train.kknn(class ~ ., ionosphere.learn, kmax = 15, 
+                         kernel = c("triangular", "rectangular", "epanechnikov", "optimal"), distance = 2)
 plot(fit.train1)
 plot(fit.train2)

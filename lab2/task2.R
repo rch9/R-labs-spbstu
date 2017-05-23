@@ -23,3 +23,13 @@ a = kknn(Type~., glass.learn, glass.valid, test, distance = 1, kernel = "triangu
 b <- fitted(a)
 b
 
+# fit.train2 <- train.kknn(Type~ ., glass.learn, kmax = 50, 
+#                          kernel = c("triangular", "rectangular", "epanechnikov", "optimal"), distance = 3)
+
+
+fit.train2 <- train.kknn(Type~ ., glass.learn, kmax = 5,
+                         kernel = "triangular", distance = 2)
+
+
+plot(fit.train2)
+
