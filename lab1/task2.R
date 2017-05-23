@@ -14,7 +14,7 @@ classifier <- naiveBayes(f[,-3], f$TYPE)
 
 
 # test
-set.seed(64761)
+set.seed(14261)
 
 X1 = c(rnorm(50, mean = 10, sd = 4), rnorm(50, mean = 20, sd = 3))
 X2 = c(rnorm(50, mean = 14, sd = 4), rnorm(50, mean = 18, sd = 3))
