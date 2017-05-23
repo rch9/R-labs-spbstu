@@ -17,7 +17,14 @@ nsw.tr <- tree(re78 ~., nsw74psid1)
 draw.tree(nsw.tr)
 print(nsw.tr)
 
+
 monica.tr1 <- snip.tree(monica.tr, nodes = 4)
 
 draw.tree(monica.tr1)
 print(monica.tr1)
+
+
+
+
+
+

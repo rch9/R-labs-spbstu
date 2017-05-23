@@ -6,7 +6,7 @@ library(cluster)
 
 data("pluton")
 
-for(i in 1:10)
+for(i in 2:10)
 {
   cl <- kmeans(pluton, 3, iter.max = i) 
   plot(pluton, col = cl$cluster)

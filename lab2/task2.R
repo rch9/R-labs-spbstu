@@ -32,4 +32,4 @@ fit.train2 <- train.kknn(Type~ ., glass.learn, kmax = 5,
 
 
 plot(fit.train2)
-
+table(fit.train2$)
