@@ -9,10 +9,22 @@
 
 seeds_table <- read.table(file = "seeds_dataset.txt", sep = ",", stringsAsFactors = TRUE)
 
-# v1 = c(seeds_table$V1, seeds_table$V2)
-v1 = seeds_table$V2
-
-# cl <- clara(v1, k = 3)
-# plot(v1, col = cl$clustering)
-cl <- kmeans(v1, 3, iter.max = 5)
-plot(v1, col = cl$cluster)
+# 
+# # v1 = c(seeds_table$V1, seeds_table$V2)
+# v1 = seeds_table$V1
+# v2 = seeds_table$V2
+# v3 = seeds_table$V3
+# v4 = seeds_table$V4
+# v5 = seeds_table$V5
+# v6 = seeds_table$V6
+# v7 = seeds_table$V7
+# 
+# v123 = c(v1, v2, v3)
+# v4567 = c(v4, v5, v6, v7)
+# 
+# 
+# # plot(v1, col = cl$clustering)
+# cl1 <- clara(v123, k = 3)
+# cl2 <- clara(v4567, k = 3)
+# plot(v123, col = cl1$cluster)
+# plot(v4567, col = cl2$cluster)

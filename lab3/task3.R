@@ -10,21 +10,25 @@ library(maptree)
 
 data(nsw74psid1)
 
-nsw74psid1[1,]
-
-nsw.tr <- tree(re78 ~., nsw74psid1)
-
-draw.tree(nsw.tr)
-print(nsw.tr)
+f <- lm(re78~., data=nsw74psid1)
+summary(f)
 
 
-monica.tr1 <- snip.tree(monica.tr, nodes = 4)
-
-draw.tree(monica.tr1)
-print(monica.tr1)
-
-
-
-
-
-
+# nsw74psid1[1,]
+# 
+# nsw.tr <- tree(re78 ~., nsw74psid1)
+# 
+# draw.tree(nsw.tr)
+# print(nsw.tr)
+# 
+# 
+# monica.tr1 <- snip.tree(monica.tr, nodes = 4)
+# 
+# draw.tree(monica.tr1)
+# print(monica.tr1)
+# 
+# 
+# 
+# 
+# 
+# 
